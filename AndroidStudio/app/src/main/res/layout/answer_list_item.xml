@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_border_textview">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/head"
+            android:layout_margin="15dp"></ImageView>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextView1"
+            android:text="回答者昵称"
+            android:layout_weight="1"
+            android:textAlignment="textStart"
+
+            android:layout_marginRight="20dp"></TextView>
+
+        <TextView
+            style="@style/TextView1"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="3min前"></TextView>
+
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/answerImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/answer">
+    </ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/answerText"
+        style="@style/TextView2"
+        android:text="利用position：fixed 固定定位"
+        android:textAlignment="textStart">
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_border_textview"
+    >
+
+    <TextView
+        style="@style/TextView1"
+        android:id="@+id/resourceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="高等数学一极限的复习提纲"
+
+
+        />
+    <TextView
+        style="@style/TextView2"
+        android:id="@+id/resourceTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="发布于  2012-5-9"
+
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CommunityDetails">
+
+    <com.example.schoolresourcepark.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <LinearLayout
+        android:background="@drawable/bottom_border_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            style="@style/TextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:text="社区名称"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            />
+        <Button
+            android:id="@+id/join"
+            style="@style/Button"
+            android:text="加入"
+            android:textAlignment="center"
+            android:background="@color/white"
+            android:layout_width="86dp"
+            android:layout_height="36dp"
+            android:layout_margin="15dp"
+            android:radius="25dp"
+            android:textColor="@color/main_blue"
+            android:textSize="18sp"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/bottom_blue_border_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="73dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/head"
+                android:layout_marginLeft="16dp"
+
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/people_1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                />
+
+            <TextView
+                style="@style/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:text="254人"
+
+
+
+                />
+        </LinearLayout>
+        <TextView
+            style="@style/TextView2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="社区简介"
+            android:textAlignment="textStart"
+            android:layout_margin="15dp"
+
+
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/communityTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="#CBC8C8"
+        app:tabSelectedTextColor="@color/main_blue"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/communityPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/communityTab"
+        />
+
+</LinearLayout>

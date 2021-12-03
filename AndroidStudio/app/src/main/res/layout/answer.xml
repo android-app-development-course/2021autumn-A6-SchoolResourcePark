@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    后台回传数据：要回答的问题-->
+<!--    送往后台的数据：我的回答、（文件）、（照片）-->
+
+    <com.example.schoolresourcepark.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/problemLogo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            app:srcCompat="@drawable/problem" />
+
+<!--        回传数据-->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="谁有软件工程的期末模拟试卷?"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/resourceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginBottom="10dp"
+            android:text="我的回答"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+
+<!--    送往后台：我的回答-->
+    <EditText
+        android:id="@+id/add_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:minLines="10"
+        android:maxLines="15"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/editbox_background"
+        >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginLeft="175dp">
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="上传文件"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/uploadFile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/file" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginLeft="175dp">
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="上传照片"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/uploadphoto"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/photo1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginLeft="175dp">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="点击拍照"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/uploadLogo"
+            android:layout_width="25dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp"
+            app:srcCompat="@drawable/photo2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_uploadResource"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="18dp"
+            android:text="确定回答"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

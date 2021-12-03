@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--    送往后台的数据：资源标题、资源简介、（文件）-->
+    <com.example.schoolresourcepark.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/penLogo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            app:srcCompat="@drawable/pen" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="5dp"
+            android:text="下方发布的资源将发布在社区"
+            android:textColor="@color/main_blue"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/resourceTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="资源标题"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <!--        送往后台：资源标题-->
+    <EditText
+        android:id="@+id/resourceTitleContext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="11pt"
+        android:layout_marginRight="11pt"
+        android:textColor="#000000"
+        android:textColorHint="#bcbcbc"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/resourceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginBottom="10dp"
+            android:text="资源简介"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+
+    <!--        送往后台：资源简介-->
+    <EditText
+        android:id="@+id/add_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:minLines="10"
+        android:maxLines="15"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/editbox_background"
+    >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginLeft="150dp">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="点击上传文件"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/uploadLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/upload" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_uploadResource"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="18dp"
+            android:text="确认上传"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

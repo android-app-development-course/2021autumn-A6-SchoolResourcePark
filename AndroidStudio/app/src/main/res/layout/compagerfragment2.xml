@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+
+<!--        />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="55dp"
+            android:src="@drawable/mine_1"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+            android:id="@+id/Nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布人昵称"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="14dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="3min前"
+            android:textSize="18sp"
+            android:layout_marginLeft="76dp"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="准备开发安卓的APP，请问大家有什么学习建议和指导吗？"
+            android:textSize="18sp"
+            android:layout_marginLeft="16dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="55dp"
+            android:src="@drawable/mine_1"
+            android:layout_marginLeft="16dp"
+
+            />
+        <TextView
+            android:id="@+id/Nickname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布人昵称"
+            android:textSize="18sp"
+            android:layout_marginLeft="14dp"
+            android:layout_gravity="center"
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3min前"
+            android:textSize="18sp"
+            android:layout_marginLeft="76dp"
+            android:layout_gravity="center"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="准备开发安卓的APP，请问大家有什么学习建议和指导吗？"
+            android:textSize="18sp"
+            android:layout_marginLeft="16dp"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

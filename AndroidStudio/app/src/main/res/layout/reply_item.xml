@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bottom_border_textview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <TextView
+        style="@style/TextView1"
+        android:id="@+id/replyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+
+        android:text="导致软件缺陷最大的原因是什么？"
+
+
+        />
+    <TextView
+        style="@style/TextView2"
+        android:id="@+id/replyContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+
+        android:text="原因是。。。。。。。。。。。"
+
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="subject">
+        <item>理学</item>
+        <item>工学 </item>
+        <item>经济学</item>
+        <item>管理学</item>
+        <item>医学</item>
+    </string-array>
+</resources>

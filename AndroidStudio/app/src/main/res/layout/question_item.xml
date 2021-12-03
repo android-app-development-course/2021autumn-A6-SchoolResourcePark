@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_border_textview"
+    >
+
+    <TextView
+        android:id="@+id/questionTitle"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="Linux进程通信"
+        android:textAlignment="textStart"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            style="@style/TextView2"
+            android:id="@+id/questionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="textEnd"
+            android:text="0回复"
+
+            />
+        <TextView
+            style="@style/TextView2"
+            android:id="@+id/questionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="2021-10-10"
+
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

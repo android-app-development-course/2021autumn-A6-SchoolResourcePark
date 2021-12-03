@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionDetail"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bottom_border_textview">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:srcCompat="@drawable/head"
+                android:layout_margin="15dp"></ImageView>
+
+            <TextView
+                android:id="@+id/asker"
+                style="@style/TextView1"
+                android:text="提问者昵称"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"></TextView>
+
+            <TextView
+                style="@style/TextView1"
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3min前"></TextView>
+
+            <ImageView
+                android:id="@+id/collect"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/collect1" />
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            style="@style/TextView1"
+            android:text="heml#将html设置为固定区域"
+            android:textAlignment="textStart">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="15dp"
+            android:id="@+id/introduction"
+            style="@style/TextView2"
+            android:text="我希望将网页的左侧固定死，不论滚轮怎么移动，
+左边始终都保持一样的内容，请问我应该怎么做？"
+            android:textAlignment="textStart">
+        </TextView>
+        <Button
+            android:layout_width="102dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:id="@+id/download"
+            android:background="@drawable/btn_shape"
+            android:text="我来回答"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/white">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_border_textview">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            style="@style/TextView1"
+            android:text="共12条回答"
+            ></TextView>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
