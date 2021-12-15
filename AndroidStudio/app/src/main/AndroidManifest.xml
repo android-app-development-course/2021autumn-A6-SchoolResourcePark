@@ -10,80 +10,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SchoolResourcePark">
         <activity
-
-            android:name=".QuestionDetail"
-            android:exported="false" />
-        <activity
-
-            android:name=".PersonalCenter"
-            android:exported="false" />
-        <activity
-        android:name=".CommunityList"
-            android:exported="false"/>
-
-
-        <activity
-            android:name=".MyResource"
-            android:exported="false"
-            />
-        <activity
-
-            android:name=".register"
-            android:exported="false" />
-
-        <activity
             android:name=".navigation2"
             android:exported="false" />
         <activity
             android:name=".navigation1"
             android:exported="false" />
         <activity
+            android:name=".passwordChange"
+            android:exported="false" />
+        <activity
+            android:name=".CommunityList"
+            android:exported="false" />
+        <activity
+            android:name=".CreateCommunity"
+            android:exported="false" />
+        <activity
+            android:name=".QuestionDetail"
+            android:exported="false" />
+        <activity
+            android:name=".CommunityDetails"
+            android:exported="false" />
+        <activity
+            android:name=".register"
+            android:exported="false" />
+        <activity
+            android:name=".MyResource"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Login" -->
+        <!-- android:exported="false" /> -->
+        <activity
             android:name=".MyReply"
             android:exported="false" />
-
         <activity
-            android:name=".Login"
-            android:exported="false"/>
-
+            android:name=".myInfo"
+            android:exported="false" />
         <activity
             android:name=".MyQuestion"
             android:exported="false" />
         <activity
-            android:name=".myInfo"
-            android:exported="true" >
+            android:name=".Login"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-
             android:name=".uploadResources"
             android:exported="false" />
         <activity
-
             android:name=".ResourceDetail"
             android:exported="false" />
         <activity
-
             android:name=".AnswerActivity"
             android:exported="false" />
         <activity
             android:name=".MyCollection"
-
-
             android:exported="false" />
         <activity
-            android:name=".CommunityDetails"
-
+            android:name=".PersonalCenter"
             android:exported="false" />
-
-
         <activity
             android:name=".quiz"
             android:exported="false" />
-
-
     </application>
 
 </manifest>

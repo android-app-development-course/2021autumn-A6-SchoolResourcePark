@@ -1,5 +1,6 @@
 package com.example.schoolresourcepark
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,20 +13,33 @@ import kotlinx.android.synthetic.main.activity_community_details.*
 import kotlinx.android.synthetic.main.title.*
 import androidx.viewpager.widget.ViewPager
 import androidx.fragment.app.FragmentPagerAdapter
-import kotlinx.android.synthetic.main.activity_my_collection.*
+
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_my_resource.*
 import java.util.ArrayList
 
 class CommunityDetails : AppCompatActivity() {
     private val titleList = ArrayList<String>()
     private val fragmentList = ArrayList<Fragment>()
+
+    private val resourceList=ArrayList<Resource>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_details)
         supportActionBar?.hide()
         titleText.setText("社区名称")
+        tabQuestion.bringToFront()
+        tabResource.bringToFront()
+        tabQuestion.setOnClickListener{
+            val intent = Intent(this, AnswerActivity::class.java)
+            startActivity(intent)
+        }
+        tabResource.setOnClickListener{
+            val intent = Intent(this, uploadResources::class.java)
+            startActivity(intent)
+        }
 
-        val communitytab: TabLayout=findViewById(R.id.communityTab)
-        val communitypager: ViewPager=findViewById(R.id.communityPager)
         titleList.clear();
         titleList.add("问题列表");
         titleList.add("资源列表");
@@ -33,28 +47,31 @@ class CommunityDetails : AppCompatActivity() {
         fragmentList.add(ComPagerFragment1())
         fragmentList.add(ComPagerFragment2())
 
+
+
         val PageAdapter: FragmentPagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
-        override fun getItem(i: Int): Fragment {
-            return fragmentList[i]
-        }
+            override fun getItem(i: Int): Fragment {
+                return fragmentList[i]
+            }
 
-        @Nullable
-        override fun getPageTitle(position: Int): CharSequence? {
-            return titleList[position]
-        }
+            @Nullable
+            override fun getPageTitle(position: Int): CharSequence? {
+                return titleList[position]
+            }
 
-        override fun getItemId(position: Int): Long {
-            return position.toLong()
-        }
+            override fun getItemId(position: Int): Long {
+                return position.toLong()
+            }
 
-        override fun getCount(): Int {
-            return titleList.size
+            override fun getCount(): Int {
+                return titleList.size
+            }
         }
+        communityPager.adapter=PageAdapter
+        communityTab.setupWithViewPager(communityPager)
+
     }
-    communityPager.adapter=PageAdapter
-    communityTab.setupWithViewPager(communityPager)
 
-    }
 
 
 }

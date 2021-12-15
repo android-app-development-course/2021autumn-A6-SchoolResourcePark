@@ -14,13 +14,15 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="InputBoxStyle">
-        <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_marginLeft">18dp</item>
         <item name="android:layout_marginRight">18dp</item>
         <item name="android:background">@drawable/border_input_box</item>
         <item name="android:gravity">center</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
     </style>
     <style name="EditTextStyle">
         <item name="android:layout_marginTop">5dp</item>
@@ -28,7 +30,7 @@
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:background">@null</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="TextView1">
@@ -57,6 +59,16 @@
         <item name="android:gravity">center</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Theme.SchoolResourcePark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.SchoolResourcePark.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.SchoolResourcePark.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/textsizi</item>
     </style>
 
 </resources>

@@ -18,11 +18,92 @@
         android:layout_height="wrap_content"
         app:tabTextColor="#CBC8C8"
         app:tabSelectedTextColor="@color/main_blue"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabIndicatorColor="@color/main_blue"
         />
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/communityListPager"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/communityListPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/communityTab" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tabCreateCom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:scaleType="center"
+            android:src="@drawable/bt_add"
+            app:backgroundTint="@color/main_blue"
+            app:borderWidth="0.0dip"
+            app:fabSize="normal"
+            android:layout_marginBottom="65dp"
+            android:layout_marginRight="20dp"/>
+
+    </FrameLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/communityTab"
-        />
+        android:orientation="horizontal">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:id="@+id/communitybutton">
+            <ImageView
+                android:id="@+id/communityLogo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/community" />
+            <TextView
+                android:id="@+id/communityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="社区"
+                android:textColor="@color/main_blue"
+                style="@style/TextView2"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:id="@+id/mybutton">
+            <ImageView
+                android:id="@+id/myLogo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/my_grey" />
+
+            <TextView
+                android:id="@+id/myText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="我的"
+                android:textColor="@color/grey"
+                style="@style/TextView2"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

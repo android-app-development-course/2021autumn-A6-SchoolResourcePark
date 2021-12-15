@@ -12,7 +12,7 @@
         android:layout_width="261dp"
         android:layout_height="49dp"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif"
         android:text="欢迎注册 学资园"
@@ -24,11 +24,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="75dp"
+        android:layout_width="67dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         app:srcCompat="@drawable/xzy" />
 
     <TableLayout
@@ -50,9 +48,7 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
-                    style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                    style="@style/EditTextStyle"></EditText>
             </LinearLayout>
 
         </TableRow>
@@ -71,8 +67,7 @@
                 style="@style/InputBoxStyle">
                 <EditText
                     style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                  ></EditText>
             </LinearLayout>
 
         </TableRow>
@@ -92,8 +87,7 @@
                 style="@style/InputBoxStyle">
                 <EditText
                     style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                   ></EditText>
             </LinearLayout>
         </TableRow>
 
@@ -112,8 +106,7 @@
                 style="@style/InputBoxStyle">
                 <EditText
                     style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                  ></EditText>
             </LinearLayout>
         </TableRow>
 
@@ -132,8 +125,7 @@
                 style="@style/InputBoxStyle">
                 <EditText
                     style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                  ></EditText>
             </LinearLayout>
         </TableRow>
 
@@ -168,7 +160,7 @@
         android:layout_width="300dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
+        android:layout_margin="10dp"
         android:text="注册"
         android:textColor="@color/white"
         android:textSize="18sp" />
@@ -177,5 +169,6 @@
         style="@style/TextView2"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="已有账号?前往登陆" />
+        android:text="已有账号?前往登陆"
+        android:clickable="true"/>
 </LinearLayout>

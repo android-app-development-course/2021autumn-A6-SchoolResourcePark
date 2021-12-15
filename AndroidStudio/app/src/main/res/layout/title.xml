@@ -27,6 +27,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="标题测试"
+            android:textSize="22sp"
             android:textColor="@color/white"
             />
     </LinearLayout>

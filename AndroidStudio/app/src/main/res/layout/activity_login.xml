@@ -53,9 +53,8 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
-                    style="@style/EditTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></EditText>
+                    android:id="@+id/E_mail"
+                    style="@style/EditTextStyle"></EditText>
             </LinearLayout>
 
         </TableRow>
@@ -139,8 +138,9 @@
             android:textAlignment="viewStart" />
 
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/bt_register"
             style="@style/TextView2"
+            android:clickable="true"
             android:gravity="right"
             android:text="新用户注册  >" />
     </LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_border_textview"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="55dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/head" />
+
+        <TextView
+            android:id="@+id/ResName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="发布人昵称"
+            style="@style/TextView1"
+            android:textAlignment="textStart"
+            android:layout_gravity="center"
+
+
+            />
+
+        <TextView
+            android:id="@+id/ResTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="3min前"
+            style="@style/TextView1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/ResContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="准备开发安卓的APP，请问大家有什么学习建议和指导吗？"
+            style="@style/TextView1"
+            android:textAlignment="textStart"
+            android:layout_margin="16dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.login
+import kotlinx.android.synthetic.main.activity_my_info.*
+import kotlinx.android.synthetic.main.activity_password_change.*
 import kotlinx.android.synthetic.main.title.*
 
 class myInfo : AppCompatActivity() {
@@ -15,16 +19,15 @@ class myInfo : AppCompatActivity() {
 
         supportActionBar?.hide()
         titleText.setText("我的信息")
-
-        var changepw=findViewById<Button>(R.id.bt_changepw)
-        var titleBack=findViewById<ImageView>(R.id.titleBack)
+//
+//        var changepw=findViewById<Button>(R.id.bt_changepw)
+//        var titleBack=findViewById<ImageView>(R.id.titleBack)
         //点击进入修改密码界面
-        changepw.setOnClickListener{
+        bt_changepw1.setOnClickListener{
             val intent = Intent(this, passwordChange::class.java)
             startActivity(intent)
         }
-        //点击返回个人中心
-        titleBack.setOnClickListener{
+        bt_savechange.setOnClickListener{
             val intent = Intent(this, PersonalCenter::class.java)
             startActivity(intent)
         }

@@ -1,5 +1,7 @@
+
 package com.example.schoolresourcepark
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.Nullable
@@ -22,6 +24,17 @@ class CommunityList : AppCompatActivity() {
 
         supportActionBar?.hide()
         titleText.setText("社区")
+        tabCreateCom.bringToFront()
+
+        tabCreateCom.setOnClickListener{
+            val intent=Intent(this,CreateCommunity::class.java)
+            startActivity(intent)
+        }
+
+        mybutton.setOnClickListener {
+            val intent=Intent(this,PersonalCenter::class.java)
+            startActivity(intent)
+        }
 
 //        val communitytab: TabLayout =findViewById(R.id.communityTab)
 //        val communitypager: ViewPager =findViewById(R.id.communityPager)

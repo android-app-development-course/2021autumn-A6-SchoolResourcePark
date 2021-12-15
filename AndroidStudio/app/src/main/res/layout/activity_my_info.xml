@@ -4,166 +4,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical">
 
     <com.example.schoolresourcepark.TitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         />
 
-    <ImageView
-        android:id="@+id/head"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:background="@drawable/head"
-        android:src="@drawable/circle_images"
-        />
+    <LinearLayout
 
-    <TableLayout
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                style="@style/TextView1"
-                android:id="@+id/textView1"
-                android:text="昵称"
-                android:textSize="20sp"/>
-            <LinearLayout android:layout_width="365dp">
-                <EditText
-                    android:id="@+id/user_account"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="闪亮熊熊"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                style="@style/TextView1"
-                android:id="@+id/textView2"
-                android:text="性别"
-                android:textSize="20sp"/>
-            <LinearLayout android:layout_width="365dp">
-                <EditText
-                    android:id="@+id/user_gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="女"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                style="@style/TextView1"
-                android:id="@+id/textView3"
-                android:text="地区"
-                android:textSize="20sp"/>
-            <LinearLayout android:layout_width="365dp">
-                <EditText
-                    android:id="@+id/user_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="广东省广州市"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                style="@style/TextView1"
-                android:id="@+id/textView4"
-                android:text="学科"
-                android:textSize="20sp"/>
-            <LinearLayout android:layout_width="365dp">
-                <EditText
-                    android:id="@+id/user_subject"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="工学"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                style="@style/TextView1"
-                android:id="@+id/textView5"
-                android:text="邮箱"
-                android:textSize="20sp"/>
-            <LinearLayout android:layout_width="365dp">
-                <EditText
-                    android:id="@+id/user_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="1370252906@qq.com"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>
-
-    <Button
-        android:id="@+id/bt_savechange"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="10dp"
-        android:text="保存修改"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_shape"
-        android:textSize="22sp" />
-    <Button
-        android:id="@+id/bt_changepw"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="30dp"
-        android:text="修改密码"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_shape"
-        android:textSize="22sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/head"
+            android:src="@drawable/circle_images"
+            />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="30dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/TextView1"
+                    android:id="@+id/textView1"
+                    android:text="昵称"
+                    android:textSize="20sp"/>
+                <LinearLayout android:layout_width="365dp">
+                    <EditText
+                        android:id="@+id/user_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="闪亮熊熊"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/TextView1"
+                    android:id="@+id/textView2"
+                    android:text="性别"
+                    android:textSize="20sp"/>
+                <LinearLayout android:layout_width="365dp">
+                    <EditText
+                        android:id="@+id/user_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="女"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/TextView1"
+                    android:id="@+id/textView3"
+                    android:text="地区"
+                    android:textSize="20sp"/>
+                <LinearLayout android:layout_width="365dp">
+                    <EditText
+                        android:id="@+id/user_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="广东省广州市"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/TextView1"
+                    android:id="@+id/textView4"
+                    android:text="学科"
+                    android:textSize="20sp"/>
+                <LinearLayout android:layout_width="365dp">
+
+                    <Spinner
+                        android:id="@+id/user_subject"
+                        android:layout_height="50dp"
+                        android:layout_width="match_parent"
+                        android:entries="@array/subject"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/TextView1"
+                    android:id="@+id/textView5"
+                    android:text="邮箱"
+                    android:textSize="20sp"/>
+                <LinearLayout android:layout_width="365dp">
+                    <EditText
+                        android:id="@+id/user_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="1370252906@qq.com"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/bt_savechange"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="10dp"
+            android:text="保存修改"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/bt_changepw1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="20dp"
+            android:text="修改密码"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

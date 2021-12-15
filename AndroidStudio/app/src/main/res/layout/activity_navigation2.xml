@@ -4,67 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".navigation2">
+    <ImageView
+        android:id="@+id/myLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        app:srcCompat="@drawable/my" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:layout_marginLeft="60dp">
-
-            <ImageView
-                android:id="@+id/communityLogo"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/community_grey" />
-            <TextView
-                android:id="@+id/communityText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp"
-                android:layout_weight="1"
-                android:text="社区"
-                android:textColor="#8a8a8a"
-                android:textSize="15sp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-
-            android:layout_marginLeft="165dp">
-
-            <ImageView
-                android:id="@+id/myLogo"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="15dp"
-                app:srcCompat="@drawable/my" />
-            <TextView
-                android:id="@+id/titleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:text="我的"
-                android:textColor="@color/main_blue"
-                android:textSize="15sp"
-                />
-
-        </LinearLayout>
-    </LinearLayout>
-
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="我的"
+        android:textColor="@color/main_blue"
+        style="@style/TextView2"
+        />
 
 
 </LinearLayout>

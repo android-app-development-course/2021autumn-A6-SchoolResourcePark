@@ -29,14 +29,13 @@
             />
         <Button
             android:id="@+id/join"
-            style="@style/Button"
+
             android:text="加入"
             android:textAlignment="center"
-            android:background="@color/white"
+            android:background="@drawable/join_button"
             android:layout_width="86dp"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:layout_margin="15dp"
-            android:radius="25dp"
             android:textColor="@color/main_blue"
             android:textSize="18sp"
 
@@ -96,20 +95,59 @@
 
             />
 
-    </LinearLayout>
 
+    </LinearLayout>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/communityTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabTextColor="#CBC8C8"
         app:tabSelectedTextColor="@color/main_blue"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabIndicatorColor="@color/main_blue"
         />
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/communityPager"
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/communityTab"
-        />
+        >
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tabQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="145dp"
+            android:scaleType="center"
+            android:src="@drawable/bt_ask"
+            app:backgroundTint="@color/main_blue"
+            app:borderWidth="0.0dip"
+            app:fabSize="normal"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tabResource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:scaleType="center"
+            android:src="@drawable/bt_upload_file"
+            app:backgroundTint="@color/main_blue"
+            app:borderWidth="0.0dip"
+            app:fabSize="normal"
+            android:layout_marginBottom="65dp"
+            android:layout_marginRight="20dp"/>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/communityPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/communityTab" >
+
+
+
+        </androidx.viewpager.widget.ViewPager>
+    </FrameLayout>
+
+
 
 </LinearLayout>
