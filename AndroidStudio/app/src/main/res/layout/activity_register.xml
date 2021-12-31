@@ -48,6 +48,7 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
+                    android:id="@+id/E_name"
                     style="@style/EditTextStyle"></EditText>
             </LinearLayout>
 
@@ -65,9 +66,12 @@
                 />
             <LinearLayout
                 style="@style/InputBoxStyle">
-                <EditText
-                    style="@style/EditTextStyle"
-                  ></EditText>
+                <Spinner
+                    android:id="@+id/mySex"
+                    android:layout_height="35dp"
+                    android:layout_width="match_parent"
+                    android:entries="@array/sex"
+                    />
             </LinearLayout>
 
         </TableRow>
@@ -86,6 +90,7 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
+                    android:id="@+id/E_emails"
                     style="@style/EditTextStyle"
                    ></EditText>
             </LinearLayout>
@@ -105,8 +110,12 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
+                    android:id="@+id/E_password"
                     style="@style/EditTextStyle"
-                  ></EditText>
+                    android:inputType="textPassword"
+                  >
+
+                </EditText>
             </LinearLayout>
         </TableRow>
 
@@ -124,6 +133,7 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <EditText
+                    android:id="@+id/E_place"
                     style="@style/EditTextStyle"
                   ></EditText>
             </LinearLayout>
@@ -143,7 +153,7 @@
             <LinearLayout
                 style="@style/InputBoxStyle">
                 <Spinner
-                    android:id="@+id/mySpinner"
+                    android:id="@+id/mySubject"
                     android:layout_height="35dp"
                     android:layout_width="match_parent"
                     android:entries="@array/subject"
@@ -156,7 +166,7 @@
 
     <Button
         style="@style/Button"
-        android:id="@+id/button"
+        android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
@@ -169,6 +179,7 @@
         style="@style/TextView2"
         android:gravity="center"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="已有账号?前往登陆"
         android:clickable="true"/>
 </LinearLayout>

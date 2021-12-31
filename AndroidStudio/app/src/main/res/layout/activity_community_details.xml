@@ -20,16 +20,16 @@
         >
 
         <TextView
+            android:id="@+id/comDetail_cname"
             style="@style/TextView1"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
-            android:text="社区名称"
+            android:text=""
             android:textSize="20sp"
             android:layout_margin="15dp"
             />
         <Button
-            android:id="@+id/join"
-
+            android:id="@+id/bt_joinCom"
             android:text="加入"
             android:textAlignment="center"
             android:background="@drawable/join_button"
@@ -56,6 +56,7 @@
             >
 
             <ImageView
+                android:id="@+id/comDetail_cimage"
                 android:layout_width="76dp"
                 android:layout_height="73dp"
                 android:layout_margin="15dp"
@@ -73,25 +74,27 @@
                 />
 
             <TextView
+                android:id="@+id/comDetal_cnum"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="12dp"
-                android:text="254人"
+                android:text=""
 
 
 
                 />
         </LinearLayout>
         <TextView
+            android:id="@+id/comDetal_briefIntro"
             style="@style/TextView2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="社区简介"
+            android:text=""
             android:textAlignment="textStart"
             android:layout_margin="15dp"
-
+            android:scrollbars="vertical"
 
             />
 

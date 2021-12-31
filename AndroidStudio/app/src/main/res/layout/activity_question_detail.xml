@@ -21,29 +21,35 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/avatar"
+                android:id="@+id/avatarImg"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 app:srcCompat="@drawable/head"
-                android:layout_margin="15dp"></ImageView>
+                android:layout_margin="15dp">
+
+            </ImageView>
 
             <TextView
                 android:id="@+id/asker"
                 style="@style/TextView1"
                 android:text="提问者昵称"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"></TextView>
+                android:layout_marginRight="20dp">
+
+            </TextView>
 
             <TextView
                 style="@style/TextView1"
-                android:id="@+id/time"
+                android:id="@+id/asktime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3min前"></TextView>
+                android:text="">
+
+            </TextView>
 
             <ImageView
-                android:id="@+id/collect"
+                android:id="@+id/bt_collectQue"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_margin="15dp"
@@ -53,24 +59,52 @@
 
         </LinearLayout>
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/asktitle"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_margin="15dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             style="@style/TextView1"
-            android:text="heml#将html设置为固定区域"
+            android:text=""
             android:textAlignment="textStart">
         </TextView>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_margin="15dp"
-            android:id="@+id/introduction"
+            android:layout_height="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/QD_askintroduction"
             style="@style/TextView2"
-            android:text="我希望将网页的左侧固定死，不论滚轮怎么移动，
-左边始终都保持一样的内容，请问我应该怎么做？"
-            android:textAlignment="textStart">
+            android:text=""
+            android:textAlignment="textStart"
+            android:scrollbars="vertical">
         </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/queDetialImg1"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:maxWidth="100dp"
+                />
+            <ImageView
+                android:id="@+id/queDetialImg2"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:maxWidth="100dp"
+                />
+            <ImageView
+                android:id="@+id/queDetialImg3"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:maxWidth="100dp"
+                />
+
+        </LinearLayout>
         <Button
             android:layout_width="102dp"
             android:layout_height="40dp"
@@ -90,14 +124,16 @@
         android:orientation="horizontal"
         android:background="@drawable/bottom_border_textview">
         <TextView
+            android:id="@+id/QReplyCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             style="@style/TextView1"
-            android:text="共12条回答"
+            android:text="0条回复"
             ></TextView>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView">

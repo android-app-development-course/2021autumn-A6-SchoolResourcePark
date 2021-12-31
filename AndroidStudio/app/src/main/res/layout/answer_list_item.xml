@@ -10,7 +10,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/head"
+            android:id="@+id/headREPLY"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:src="@drawable/head"

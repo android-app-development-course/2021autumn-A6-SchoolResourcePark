@@ -11,21 +11,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-
         android:text="导致软件缺陷最大的原因是什么？"
-
-
         />
     <TextView
         style="@style/TextView2"
         android:id="@+id/replyContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="原因是。。。。。。。。。。。"
-
-
         />
 
 </LinearLayout>

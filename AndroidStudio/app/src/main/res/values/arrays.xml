@@ -7,4 +7,8 @@
         <item>管理学</item>
         <item>医学</item>
     </string-array>
+    <string-array name="sex">
+        <item>男</item>
+        <item>女 </item>
+    </string-array>
 </resources>

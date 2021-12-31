@@ -13,8 +13,6 @@
         android:layout_marginLeft="16dp"
         android:paddingTop="16dp"
         android:textAlignment="textStart"
-
-
         style="@style/TextView1"
         android:text="标题"
 
@@ -27,7 +25,7 @@
         >
 
         <TextView
-            android:id="@+id/collectionName"
+            android:id="@+id/collectionTime"
             style="@style/TextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -12,6 +12,7 @@
         >
 
         <ImageView
+            android:id="@+id/releaserImg"
             android:layout_width="56dp"
             android:layout_height="55dp"
             android:layout_margin="16dp"
@@ -24,11 +25,8 @@
             android:layout_weight="1"
             android:text="发布人昵称"
             style="@style/TextView1"
-            android:textAlignment="textStart"
-            android:layout_gravity="center"
-
-
-            />
+            android:textAlignment="textStart" />
+<!--            android:layout_gravity="center"-->
 
         <TextView
             android:id="@+id/ResTime"

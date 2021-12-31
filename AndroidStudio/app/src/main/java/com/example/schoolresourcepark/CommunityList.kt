@@ -17,24 +17,34 @@ import java.util.ArrayList
 class CommunityList : AppCompatActivity() {
     private val titleList = ArrayList<String>()
     private val fragmentList = ArrayList<Fragment>()
+    private var uid:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_list)
 
         supportActionBar?.hide()
-        titleText.setText("社区")
         tabCreateCom.bringToFront()
+
+        uid=intent.getStringExtra("uid").toString()
+
 
         tabCreateCom.setOnClickListener{
             val intent=Intent(this,CreateCommunity::class.java)
+            intent.putExtra("uid",uid)
             startActivity(intent)
+            finish()
+
         }
 
         mybutton.setOnClickListener {
-            val intent=Intent(this,PersonalCenter::class.java)
+            val intent = Intent(this, PersonalCenter::class.java)
+            intent.putExtra("uid",uid)
             startActivity(intent)
+            finish()
+
         }
+
 
 //        val communitytab: TabLayout =findViewById(R.id.communityTab)
 //        val communitypager: ViewPager =findViewById(R.id.communityPager)
@@ -43,7 +53,7 @@ class CommunityList : AppCompatActivity() {
         titleList.add("我的");
         fragmentList.clear()
         fragmentList.add(ComListFragmentg1())
-        fragmentList.add(ComListFragmentg1())
+        fragmentList.add(ComListFragmentg2())
 
         val PageAdapter: FragmentPagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(i: Int): Fragment {
@@ -65,5 +75,17 @@ class CommunityList : AppCompatActivity() {
         }
         communityListPager.adapter=PageAdapter
         communityListTab.setupWithViewPager(communityListPager)
+    }
+
+    override fun onResume() {
+        super.onResume()
+//        val intent=Intent(this,CommunityList::class.java)
+//        startActivity(intent)
+//        onCreate(null)
+    }
+
+
+    fun sendUid():String {
+        return uid
     }
 }

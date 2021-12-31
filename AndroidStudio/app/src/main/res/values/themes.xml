@@ -3,7 +3,7 @@
     <style name="Theme.SchoolResourcePark" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/main_blue</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/main_blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -70,5 +70,6 @@
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">@dimen/textsizi</item>
     </style>
+
 
 </resources>

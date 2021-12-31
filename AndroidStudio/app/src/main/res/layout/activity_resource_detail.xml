@@ -22,14 +22,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/avatar"
+                android:id="@+id/avatarRES"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 app:srcCompat="@drawable/head"
                 android:layout_margin="15dp"></ImageView>
 
             <TextView
-                android:id="@+id/asker"
+                android:id="@+id/RESasker"
                 style="@style/TextView1"
                 android:text="发布者昵称"
                 android:layout_marginLeft="20dp"
@@ -37,14 +37,14 @@
 
             <TextView
                 style="@style/TextView1"
-                android:id="@+id/time"
+                android:id="@+id/REStime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="3min前"></TextView>
 
             <ImageView
-                android:id="@+id/collect"
+                android:id="@+id/bt_collectRes"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_margin="15dp"
@@ -54,28 +54,30 @@
 
         </LinearLayout>
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/REStitle"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
             style="@style/TextView1"
-            android:text="Android 开发自我学习笔记和思维导图，欢迎大家下载学习"
+            android:text=""
             android:textAlignment="textStart">
         </TextView>
         <TextView
+
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_margin="15dp"
-            android:id="@+id/introduction"
+            android:id="@+id/RESintroduction"
             style="@style/TextView2"
             android:text="资源简介"
-            android:textAlignment="textStart">
+            android:textAlignment="textStart"
+            android:scrollbars="vertical">
         </TextView>
         <Button
             android:layout_width="102dp"
             android:layout_height="40dp"
             android:layout_margin="15dp"
-            android:id="@+id/download"
+            android:id="@+id/resDetial_download"
             android:background="@drawable/btn_shape"
             android:text="立即下载"
             android:textSize="16sp"
@@ -83,50 +85,5 @@
             android:textColor="@color/white">
         </Button>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal"
-        android:background="@drawable/bottom_border_textview">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            style="@style/TextView1"
-            android:text="资源预览"
-            ></TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/border_textview"
-            android:layout_margin="8dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="7dp"
-
-                style="@style/TextView2"
-                android:text="我们日常上网的时候，总是会碰到一些盗号的网
-站，或者是别人发一些链接给你，里面的内容是
-一些可以免费购物网站的优惠券、游戏官网上可
-以免费领取皮肤、打折的游戏。
-这些盗号网站统一的目的都是要你登录账号输入
-密码，点击登录，不过就是永远会提示你密码错
-误，登录不上。但你输入的所有信息，都会出现
-在别人的电脑上
-这些网站盗号网站之所以能骗得过别人，是因为
-做得基本和正版的官方网站没有什么差别。不能
-说毫无差别，只能说是一模一样"
-                android:textAlignment="textStart"></TextView>
-        </LinearLayout>
-
-    </LinearLayout>
-
 
 </LinearLayout>

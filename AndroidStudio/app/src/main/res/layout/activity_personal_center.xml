@@ -27,22 +27,25 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
 
-        <!--            数据回传：头像-->
-        <ImageView
-            android:id="@+id/imgpw"
+        >
+
+        <com.rishabhharit.roundedimageview.RoundedImageView
+            android:id="@+id/pc_img"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_margin="20dp"
             android:layout_gravity="center"
-            android:background="@drawable/head"
-            android:src="@drawable/circle_images"
+            android:src="@drawable/head"
+            app:cornerRadius="105dp"
+            android:scaleType="centerCrop"
             />
 
         <LinearLayout
@@ -50,16 +53,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!--            数据回传：昵称-->
-
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/PCusername"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
-                android:text="闪亮熊熊"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -67,6 +67,7 @@
                 android:id="@+id/enterLogo"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="right"
                 app:srcCompat="@drawable/enter" />
 
@@ -77,21 +78,19 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     app:srcCompat="@drawable/address" />
 
-                <!--            数据回传：地区-->
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/PClocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:text="广东省广州市" />
+                    android:textSize="15sp"
+                    android:text="" />
             </LinearLayout>
 
         </LinearLayout>
@@ -132,7 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="18dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="18dp"
                 android:text="我的提问"
                 android:textColor="@color/white"
@@ -150,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="18dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="18dp"
                 android:text="我的回答"
                 android:textColor="@color/white"
@@ -169,13 +168,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="18dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="18dp"
                 android:text="我的资源"
                 android:textColor="@color/white"
                 android:background="@drawable/btn_shape"
                 android:textSize="24sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/quit_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="18dp"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_shape"
+                android:textSize="24sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
@@ -218,8 +236,8 @@
                 android:id="@+id/mybutton">
                 <ImageView
                     android:id="@+id/myLogo"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:src="@drawable/my" />

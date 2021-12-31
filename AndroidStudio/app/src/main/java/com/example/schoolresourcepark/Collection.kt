@@ -1,3 +1,3 @@
 package com.example.schoolresourcepark
 
-class Collection (val title:String,val name:String)
+class Collection (val title:String,val time:String,val ID:String){}

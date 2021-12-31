@@ -13,12 +13,13 @@
 
         />
     <TextView
+        android:id="@+id/reply_count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/TextView1"
         android:textAlignment="textStart"
         android:layout_margin="15dp"
-        android:text="10条回答"
+        android:text="0条回答"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myReply"
