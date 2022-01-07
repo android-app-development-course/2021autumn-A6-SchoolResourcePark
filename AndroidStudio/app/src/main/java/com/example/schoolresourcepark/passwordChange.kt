@@ -52,8 +52,8 @@ class passwordChange : AppCompatActivity() {
                                             override fun done(ex: BmobException?) {
                                                 if (ex == null) {
                                                     Toast.makeText(content1, "修改成功", Toast.LENGTH_LONG).show()
-//                                                    val intent = Intent(content1, myInfo::class.java)
-//                                                    startActivity(intent)
+                                                  //  val intent = Intent(content1, myInfo::class.java)
+                                                  //  startActivity(intent)
                                                 } else {
                                                     Toast.makeText(content1, "修改失败！", Toast.LENGTH_LONG).show()
                                                 }

@@ -37,13 +37,14 @@ import kotlinx.android.synthetic.main.answer.*
 import kotlinx.android.synthetic.main.title.*
 import java.io.File
 import java.util.*
+import kotlin.collections.ArrayList
 
 class quiz : AppCompatActivity() {
     var filename:BmobFile? = null //存文件
     var i:Int = 1
-    var fileUrls:Array<String>? = null//存多个图片的url
-    var openwhich=0//2是打开相册，1是打开相机
-    val takePhoto=1
+    var fileUrls:MutableList<String> = ArrayList()//存多个图片的url
+    private val SELECT_TO_PHOTO_TAG: Int = 0X001 //选图
+    private val TAKE_CAMERA_TAG = 0X002 //拍照
     lateinit var imageUri:Uri
     lateinit var outputImage:File
 
@@ -74,17 +75,7 @@ class quiz : AppCompatActivity() {
                 problem.qdetail=inputContent
                 problem.collcount=0
                 problem.comecount=0
-
-                if(openwhich==2){
-                    problem.qimage=fileUrls
-                }
-                else if(openwhich==1){
-
-                    val pathurl= UriUtils.getFileAbsolutePath(this,imageUri)
-                    Log.e("problem.qimage", pathurl)
-                    problem.qimage= arrayOf(pathurl)
-
-                }
+                problem.qimage=fileUrls
                 problem.save(object : SaveListener<String>() {
                 override fun done(objectId: String?, ex: BmobException?) {
                     if (ex == null) {
@@ -107,31 +98,13 @@ class quiz : AppCompatActivity() {
             else{
                 Toast.makeText(this,"标题和内容不能为空",Toast.LENGTH_SHORT).show()
             }
-
-
         }
 
 
         uploadProblemPhoto.setOnClickListener {
-            openwhich=2
-            if (ContextCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE
-                ), 1)
-            } else {
                 openMyPhoto()
-            }
-
-
-
-
-
         }
         CameraLogo.setOnClickListener {
-            openwhich=1
             //openMyCamera
             outputImage=File(externalCacheDir,"output_image.jpg")
             if(outputImage.exists()){
@@ -147,7 +120,7 @@ class quiz : AppCompatActivity() {
             //启动
             val intent=Intent("android.media.action.IMAGE_CAPTURE")
             intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri)
-            startActivityForResult(intent,takePhoto)
+            startActivityForResult(intent,TAKE_CAMERA_TAG)
 
         }
     }
@@ -159,14 +132,14 @@ class quiz : AppCompatActivity() {
                 //intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true)
                 //intent.setAction(Intent.ACTION_GET_CONTENT)  //实现相册多选 该方法获得的uri在转化为真实文件路径时Android 4.4以上版本会有问题
                 //intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI //直接打开系统相册  不设置会有选择相册一步（例：系统相册、QQ浏览器相册）
-                startActivityForResult(Intent.createChooser(intent,"Select Picture"),1)
+                startActivityForResult(intent,SELECT_TO_PHOTO_TAG)
             }
         }).start()
 
     }
     override fun onActivityResult(requestCode:Int, resultCode:Int, data:Intent?){
         super.onActivityResult(requestCode, resultCode, data)
-        if(openwhich==2)
+        if(requestCode == SELECT_TO_PHOTO_TAG)
         {
             if(resultCode == Activity.RESULT_OK) {
                 /**
@@ -175,23 +148,16 @@ class quiz : AppCompatActivity() {
                 val imageUri= data?.data
                 val path = UriUtils.getFileAbsolutePath(this, imageUri)//获取照片路径
                 uploadSingle(this,path)
-
             }
         }
-        else if(openwhich==1){
-            when(requestCode){
-                takePhoto->{
-                    if(resultCode==Activity.RESULT_OK){
-                        //显示
-                        val bitmap=BitmapFactory.decodeStream(contentResolver.openInputStream(imageUri))
-                        question_img1.setImageBitmap(rotateIfRequired(bitmap))
-                        Log.e("uri", imageUri.toString())
-                    }
-                }
+        else if(requestCode == TAKE_CAMERA_TAG)
+        {
+            if(resultCode == Activity.RESULT_OK) {
+                val path = UriUtils.getFileAbsolutePath(this, imageUri)//获取照片路径
+                Log.e("path::",path.toString())
+                uploadSingle(this,path)
             }
         }
-
-
     }
 
     /**
@@ -217,7 +183,7 @@ class quiz : AppCompatActivity() {
     private fun setFileToTable(bmobFile: BmobFile) {
         filename = bmobFile
         var imageUrl = filename?.url.toString()
-        Log.e("url:",imageUrl)
+//        Log.e("url:",imageUrl)
         val strlist = imageUrl.split("://")
         imageUrl = ""
         for (str in strlist)
@@ -235,9 +201,10 @@ class quiz : AppCompatActivity() {
                 imageUrl += str
             }
         }
-        fileUrls?.plus(imageUrl)
+        fileUrls.add(imageUrl)
         loadNetImage(imageUrl)
         i++
+//        Log.e("urls:",fileUrls.toString())
     }
 
     fun loadNetImage(src : String){
@@ -248,7 +215,6 @@ class quiz : AppCompatActivity() {
         else
             Glide.with(this).load(src).into(question_img3)
     }
-
 
     private fun rotateIfRequired(bitmap: Bitmap):Bitmap{
         val exif=ExifInterface(outputImage.path)

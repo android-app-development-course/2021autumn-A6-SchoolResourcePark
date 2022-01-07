@@ -127,7 +127,7 @@ class uploadResources : AppCompatActivity() {
         res.rtitle=title
         res.rdetail=content
         res.rfile = file1
-
+        res.rfilename = name
         /**
          * 请不要给 gameScore.objectId 赋值，数据新增成功后将会自动给此条数据的objectId赋值并返回！
          */

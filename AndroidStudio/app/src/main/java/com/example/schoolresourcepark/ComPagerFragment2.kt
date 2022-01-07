@@ -68,6 +68,7 @@ class ComPagerFragment2: Fragment() {
                             if(res.rc==cid)
                             {
                                 Log.e("problem", "插入数据")
+
                                 val rtitle=res.rtitle.toString()
                                 val rid=res.objectId
                                 val askerid=res.upid
@@ -79,9 +80,28 @@ class ComPagerFragment2: Fragment() {
                                         if (ex == null) {
                                             //Toast.makeText(mContext, "查询成功", Toast.LENGTH_LONG).show()
                                             if(user!=null){
-                                                val releaserImg=user.uimage?.fileUrl.toString()
                                                 askername= user.uname.toString()
-                                                resourceList.add(ComResource(releaserImg,askername,time,rtitle,rid))
+
+                                                var imageUrlres= user.uimage?.fileUrl.toString()
+                                                val strlist = imageUrlres.split("://")
+                                                imageUrlres = ""
+                                                for (str in strlist)
+                                                {
+                                                    if (str == "http")
+                                                    {
+                                                        imageUrlres = imageUrlres + str + "s://"
+                                                    }
+                                                    else if (str == "https")
+                                                    {
+                                                        imageUrlres = imageUrlres + str + "://"
+                                                    }
+                                                    else
+                                                    {
+                                                        imageUrlres += str
+                                                    }
+                                                }
+
+                                                resourceList.add(ComResource(imageUrlres,askername,time,rtitle,rid))
 
                                                 val adapter=CPFragAdapter2(resourceList)
                                                 comPangerFrag2.adapter=adapter

@@ -102,9 +102,6 @@
         <entry key="..\:/SRP/20211228/school-resource-park/AndroidStudio/app/src/main/res/layout/compagerfragment1.xml" value="0.1" />
         <entry key="..\:/SRP/20211228/school-resource-park/AndroidStudio/app/src/main/res/layout/comrecycler1_item.xml" value="0.2" />
         <entry key="..\:/SRP/20211228/school-resource-park/AndroidStudio/app/src/main/res/layout/comrecycler2_item.xml" value="0.18541666666666667" />
-        <entry key="..\:/SRP/20211230/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_details.xml" value="0.1265625" />
-        <entry key="..\:/SRP/20211230/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_question_detail.xml" value="0.1265625" />
-        <entry key="..\:/SRP/20211230/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_resource_detail.xml" value="0.22509057971014493" />
         <entry key="..\:/work/mobileAPP/SRP/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_and_mine.xml" value="0.2558876811594203" />
         <entry key="..\:/work/mobileAPP/SRP/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_details.xml" value="0.11145833333333334" />
         <entry key="..\:/work/mobileAPP/SRP/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_list.xml" value="0.18885869565217392" />
@@ -153,6 +150,11 @@
         <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/answer.xml" value="0.13323201621073963" />
         <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/answer_list_item.xml" value="0.13323201621073963" />
         <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/comlist_item.xml" value="0.1078125" />
+        <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/comlistfragment1.xml" value="0.24456521739130435" />
+        <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/compagerfragment1.xml" value="0.24456521739130435" />
+        <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/compagerfragment2.xml" value="0.24456521739130435" />
+        <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/comrecycler1_item.xml" value="0.24456521739130435" />
+        <entry key="..\:/work/mobileAPP/SRP1230_2/school-resource-park/AndroidStudio/app/src/main/res/layout/comrecycler2_item.xml" value="0.24456521739130435" />
         <entry key="..\:/work/mobileAPP/SRPark/school-resource-park/AndroidStudio/app/src/main/res/drawable/button_white.xml" value="0.175" />
         <entry key="..\:/work/mobileAPP/SRPark/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_details.xml" value="0.2" />
         <entry key="..\:/work/mobileAPP/SRPark/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_community_list.xml" value="0.11550151975683891" />
@@ -184,6 +186,13 @@
         <entry key="..\:/xueziyuan/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_my_info.xml" value="0.1296875" />
         <entry key="..\:/xueziyuan/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_personal_center.xml" value="0.1296875" />
         <entry key="..\:/xueziyuan/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_register.xml" value="0.12047101449275362" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_my_resource.xml" value="0.12335359675785208" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_question_detail.xml" value="0.1296875" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_quiz.xml" value="0.152" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_resource_detail.xml" value="0.24864130434782608" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/activity_upload_resources.xml" value="0.24864130434782608" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/answer.xml" value="0.176" />
+        <entry key="..\:/xueziyuan4/school-resource-park/AndroidStudio/app/src/main/res/layout/answer_list_item.xml" value="0.1296875" />
       </map>
     </option>
   </component>

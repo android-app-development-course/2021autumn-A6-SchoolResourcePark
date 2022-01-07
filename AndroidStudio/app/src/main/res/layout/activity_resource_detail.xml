@@ -73,6 +73,27 @@
             android:textAlignment="textStart"
             android:scrollbars="vertical">
         </TextView>
+        <TextView
+            android:id="@+id/resourceFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <ProgressBar
+            android:id="@+id/download_main_progressBarlist"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+
+        <TextView
+            android:id="@+id/download_main_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/download_main_progressBarlist"
+            android:layout_below="@+id/download_main_progressBarlist"
+            android:text="当前进度" />
         <Button
             android:layout_width="102dp"
             android:layout_height="40dp"

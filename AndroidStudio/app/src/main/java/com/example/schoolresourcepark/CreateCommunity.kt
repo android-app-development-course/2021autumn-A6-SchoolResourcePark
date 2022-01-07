@@ -65,7 +65,7 @@ class CreateCommunity : AppCompatActivity() {
                                         Log.d("createCom","添加关联成功")
 
                                     } else {
-//                                            Snackbar.make(btn_like, "多对多关联添加失败：" + e.message, Snackbar.LENGTH_LONG).show()
+                                            //Snackbar.make(btn_like, "多对多关联添加失败：" + e.message, Snackbar.LENGTH_LONG).show()
                                         Log.d("createCom","添加关联失败")
                                     }
                                 }

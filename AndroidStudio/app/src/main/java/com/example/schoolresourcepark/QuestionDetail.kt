@@ -43,6 +43,7 @@ class QuestionDetail : AppCompatActivity() {
     var from=""
     var isCollected=false
     val mcontext=this
+    var problemTitle = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,7 +97,9 @@ class QuestionDetail : AppCompatActivity() {
             intent2.putExtra("proid", pid)
             //intent2.putExtra("comid", cid)
             intent2.putExtra("useid", uid)
+            intent2.putExtra("titleid", problemTitle)
             startActivity(intent2)
+            finish()
         }
 
         val type=0//问题
@@ -128,7 +131,7 @@ class QuestionDetail : AppCompatActivity() {
                 if (ex == null) {
                     if (problem != null) {
                         val askerId=problem.askid
-
+                        problemTitle = problem.qtitle.toString()
                         var bmobQuery2: BmobQuery<UserTable> = BmobQuery()
                         bmobQuery2.getObject(askerId, object : QueryListener<UserTable>() {
                             override fun done(user: UserTable?, ex: BmobException?) {
@@ -155,8 +158,6 @@ class QuestionDetail : AppCompatActivity() {
                                             }
                                         }
                                         Glide.with(mcontext).load(imageUrlask).into(avatarImg)
-
-
                                         val askername= user.uname.toString()
                                         asker.text=askername
                                         asktime.text=problem.createdAt.substringBefore(" ")
@@ -168,26 +169,9 @@ class QuestionDetail : AppCompatActivity() {
                                         Log.e("size", count.toString())
                                         if (count != null) {
                                             if(count>0){
-                                                for(i in 0 until count!!){
+                                                for(i in 0 until count){
                                                     var imageUrl= problem.qimage?.get(i)
                                                     if(imageUrl!=null){
-                                                        val strlist = imageUrl.split("://")
-                                                        imageUrl = ""
-                                                        for (str in strlist)
-                                                        {
-                                                            if (str == "http")
-                                                            {
-                                                                imageUrl = imageUrl + str + "s://"
-                                                            }
-                                                            else if (str == "https")
-                                                            {
-                                                                imageUrl = imageUrl + str + "://"
-                                                            }
-                                                            else
-                                                            {
-                                                                imageUrl += str
-                                                            }
-                                                        }
                                                         if (imageUrl != null) {
                                                             Log.e("url",imageUrl)
                                                         }
@@ -213,11 +197,6 @@ class QuestionDetail : AppCompatActivity() {
                                                 }
                                             }
                                         }
-
-
-
-
-
                                     }
                                 } else {
                                     //Toast.makeText(mContext, ex.message, Toast.LENGTH_LONG).show()
@@ -238,7 +217,6 @@ class QuestionDetail : AppCompatActivity() {
         var bmobQuery: BmobQuery<ReplyTable> = BmobQuery()
         bmobQuery.findObjects(object : FindListener<ReplyTable>() {
             override fun done(replys: MutableList<ReplyTable>?, ex: BmobException?) {
-
                 if (ex == null) {
                     //Toast.makeText(mContext, "查询成功", Toast.LENGTH_LONG).show()
                     Log.e("reply", "fail")
@@ -275,7 +253,7 @@ class QuestionDetail : AppCompatActivity() {
                                                         imageUrlREPLY += str
                                                     }
                                                 }
-                                                answerList.add(Answer(rname,imageUrlREPLY,reply.createdAt.substringBefore(" "),R.drawable.answer,reply.replycontent.toString()))
+                                                answerList.add(Answer(rname,imageUrlREPLY,reply.createdAt.substringBefore(" "),reply.replyimage,reply.replycontent.toString()))
                                                 QReplyCount.setText(answerList.size.toString()+"条回复")
                                                 val adapter= AnswerAdapter(answerList)
                                                 recyclerView.adapter=adapter
@@ -407,7 +385,9 @@ class QuestionDetail : AppCompatActivity() {
             val name: TextView = view.findViewById(R.id.name)
             val headREPLY: ImageView = view.findViewById(R.id.headREPLY)
             val time: TextView = view.findViewById(R.id.time)
-            val answerImage: ImageView =view.findViewById(R.id.answerImage)
+            val answerImage1: ImageView =view.findViewById(R.id.answerImage)
+            val answerImage2: ImageView =view.findViewById(R.id.answerImage2)
+            val answerImage3: ImageView =view.findViewById(R.id.answerImage3)
             val answerText: TextView = view.findViewById(R.id.answerText)
 
         }
@@ -421,10 +401,22 @@ class QuestionDetail : AppCompatActivity() {
             holder.name.text = answer.name
 //            holder.head.setImageResource(answer.head)
             holder.time.text=answer.time
-            holder.answerImage.setImageResource(answer.answerImage)
+//            holder.answerImage1.setImageResource(answer.answerImage)
+            var count:Int = 1
+            for (tempUrl in answer.answerImage!!)
+            {
+                if (count == 1)
+                    Glide.with(mcontext).load(tempUrl).into(holder.answerImage1)
+                else if (count == 2)
+                    Glide.with(mcontext).load(tempUrl).into(holder.answerImage2)
+                else if(count == 3)
+                    Glide.with(mcontext).load(tempUrl).into(holder.answerImage3)
+                else
+                    break
+                count++
+            }
             holder.answerText.text=answer.answerText
             Glide.with(mcontext).load(answer.head).into(holder.headREPLY)
-
         }
         override fun getItemCount() = answerList.size
     }

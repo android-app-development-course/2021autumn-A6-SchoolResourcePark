@@ -78,9 +78,27 @@ class ComPagerFragment1: Fragment() {
                                             if (ex == null) {
                                                 //Toast.makeText(mContext, "查询成功", Toast.LENGTH_LONG).show()
                                                 if(user!=null){
-                                                    val img=user.uimage?.fileUrl.toString()
+
+                                                    var imageUrlque= user.uimage?.fileUrl.toString()
+                                                    val strlist = imageUrlque.split("://")
+                                                    imageUrlque = ""
+                                                    for (str in strlist)
+                                                    {
+                                                        if (str == "http")
+                                                        {
+                                                            imageUrlque = imageUrlque + str + "s://"
+                                                        }
+                                                        else if (str == "https")
+                                                        {
+                                                            imageUrlque = imageUrlque + str + "://"
+                                                        }
+                                                        else
+                                                        {
+                                                            imageUrlque += str
+                                                        }
+                                                    }
                                                     askername= user.uname.toString()
-                                                    problemList.add(ComQuestion(img,askername, time ,qtitle,qccoll,qccomm,qid))
+                                                    problemList.add(ComQuestion(imageUrlque,askername, time ,qtitle,qccoll,qccomm,qid))
                                                     Log.e("name",askername)
                                                     val adapter=CPFragAdapter(problemList)
                                                     comPangerFrag1.adapter=adapter

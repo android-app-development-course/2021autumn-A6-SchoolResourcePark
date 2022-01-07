@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SchoolResourcePark</string>
+    <string name="app_name">学资园</string>
     <string name="title_activity_navigation">navigation</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

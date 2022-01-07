@@ -1,10 +1,13 @@
 package com.example.schoolresourcepark
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.app.DownloadManager.ACTION_DOWNLOAD_COMPLETE
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.location.GnssAntennaInfo
 import android.net.Uri
@@ -28,8 +31,19 @@ import kotlinx.android.synthetic.main.activity_question_detail.*
 import kotlinx.android.synthetic.main.activity_resource_detail.*
 import kotlinx.android.synthetic.main.compagerfragment1.*
 import kotlinx.android.synthetic.main.title.*
-import java.io.File
 import kotlinx.android.synthetic.main.activity_personal_center.*
+import java.lang.Exception
+import java.net.URL
+import java.net.URLConnection
+import android.os.Environment
+import android.os.Handler
+import android.os.Message
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import android.widget.TextView
+
+import android.widget.ProgressBar
+import java.io.*
 
 
 class ResourceDetail : AppCompatActivity() {
@@ -43,10 +57,24 @@ class ResourceDetail : AppCompatActivity() {
     var file:BmobFile? = null //存文件
     var mcontext=this
 
+    val context = this
+
+    var reFileName = ""
+
+    private val filePath = "/download/"
+    private var progressBar: ProgressBar? = null
+    private var textView: TextView? = null
+    private var DownedFileLength = 0
+    private var FileLength = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resource_detail)
         supportActionBar?.hide()
+        checkNeedPermissions()
+
+        progressBar= findViewById(R.id.download_main_progressBarlist)
+        textView= findViewById(R.id.download_main_Text)
 
         titleText.setText("资源详情")
 
@@ -107,7 +135,8 @@ class ResourceDetail : AppCompatActivity() {
                                         REStime.setText(res.createdAt.substringBefore(" "))
                                         REStitle.setText(res.rtitle.toString())
                                         RESintroduction.setText(res.rdetail.toString())
-
+                                        resourceFileName.text = res.rfilename
+                                        reFileName = res.rfilename.toString()
                                         Log.e("get", "查询成功" )
                                     }
                                 } else {
@@ -142,30 +171,159 @@ class ResourceDetail : AppCompatActivity() {
 
         resDetial_download.setOnClickListener{
             Log.d("下载资源","here")
-
+            object : Thread() {
+                override fun run() {
+                    var path: String = file?.url.toString()
+                    val strlist = path.split("://")
+                    path = ""
+                    for (str in strlist)
+                    {
+                        if (str == "http")
+                        {
+                            path = path + str + "s://"
+                        }
+                        else if (str == "https")
+                        {
+                            path = path + str + "://"
+                        }
+                        else
+                        {
+                            path += str
+                        }
+                    }
+                    try {
+                        downLoad(path, context)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
+            }.start()
         }
     }
 
-    private fun createOne(type:Int,uid:String,sid:String) {
-        var collect = CollectTable()
-        collect.ctype=type
-        collect.uid=uid
-        collect.sid=sid
-
-        /**
-         * 请不要给 gameScore.objectId 赋值，数据新增成功后将会自动给此条数据的objectId赋值并返回！
-         */
-        collect.save(object : SaveListener<String>() {
-            override fun done(objectId: String?, ex: BmobException?) {
-                if (ex == null) {
-                    //Toast.makeText(context, "新增数据成功：$objectId", Toast.LENGTH_LONG).show()
-                    Log.e("CREATE", "成功")
-                } else {
-                    Log.e("CREATE", "新增数据失败：" + ex.message)
+    private val handler:Handler = object:Handler()
+    {
+        override fun handleMessage(msg:Message)
+        {
+            super.handleMessage(msg)
+            if (!Thread.currentThread().isInterrupted()) {
+                when(msg.what){
+                    0->{
+                        progressBar?.max = FileLength;
+                    }
+                    1->{
+                        progressBar?.setProgress(DownedFileLength);
+                        var x = DownedFileLength*100/FileLength;
+                        textView?.text = "$x%"
+                    }
+                    2->{
+                        Toast.makeText(applicationContext, "下载完成", Toast.LENGTH_LONG).show()
+                    }
+                    else->{}
                 }
             }
-        })
+        }
+
     }
+
+    private fun downLoad(path: String, context: Context){
+
+        val url = URL(path)
+        //打开连接
+        val conn: URLConnection = url.openConnection()
+        val iss: InputStream = conn.getInputStream()
+        val contentLength = conn.contentLength
+        Log.e("", "文件长度 = $contentLength")
+
+        val savePAth = Environment.getExternalStorageDirectory().toString() + filePath
+        val file1 = File(savePAth)
+        if (!file1.exists()) {
+            file1.mkdir()
+        }
+        val savePathString =
+            Environment.getExternalStorageDirectory().toString() + filePath + reFileName
+        val file = File(savePathString)
+        if (!file.exists()) {
+            try {
+                file.createNewFile()
+            } catch (e: IOException) {
+                // TODO Auto-generated catch block
+                e.printStackTrace()
+            }
+        }
+        /*
+		 * 向SD卡中写入文件,用Handle传递线程
+		 */
+        val message = Message()
+        try {
+            val randomAccessFile = RandomAccessFile(file, "rwd")
+            randomAccessFile.setLength(FileLength.toLong())
+            val buf = ByteArray(1024*4)
+            FileLength=conn.contentLength
+            message.what=0
+            handler.sendMessage(message)
+            var length = 0
+            while (iss.read(buf).also { length = it } != -1) {
+                randomAccessFile.write(buf,0,length)
+                DownedFileLength+=length
+                val message1=Message()
+                message1.what=1;
+                handler.sendMessage(message1)
+            }
+            iss.close()
+            randomAccessFile.close()
+            val message2=Message()
+            message2.what=2;
+            handler.sendMessage(message2)
+
+        } catch (e:FileNotFoundException) {
+            // TODO Auto-generated catch block
+            e.printStackTrace()
+        } catch (e:IOException) {
+            // TODO Auto-generated catch block
+            e.printStackTrace()
+        }
+
+//        //创建文件夹 MyDownLoad，在存储卡下
+//        val dirName = Environment.getExternalStorageDirectory().toString() + "/"
+//        //下载后的文件名
+//        val fileName = dirName + reFileName
+//
+//        Log.d("文件名：",fileName)
+//
+//        //打开手机对应的输出流,输出到文件中
+//        //创建字节流
+//        val buffer = ByteArray(1024)
+//        val os: OutputStream = FileOutputStream(fileName)
+//        var len = 0
+//        //从输入六中读取数据,读到缓冲区中
+//        //写数据
+//        while (iss.read(buffer).also { len = it } != -1) {
+//            os.write(buffer, 0, len)
+//        }
+//        Log.e("文件不存在", "下载成功！")
+//        //关闭输入输出流
+//        iss.close()
+//        os.close()
+    }
+
+    private fun checkNeedPermissions(){
+        //6.0以上需要动态申请权限
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED
+            || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            != PackageManager.PERMISSION_GRANTED
+            || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            != PackageManager.PERMISSION_GRANTED) {
+            //多个权限一起申请
+            ActivityCompat.requestPermissions(this, arrayOf(
+                Manifest.permission.CAMERA,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ), 1);
+        }
+    }
+
     private fun collect(objectId: String?) {
         val resource=ResourceTable()
         resource.objectId=rid

@@ -9,4 +9,5 @@ class ResourceTable: BmobObject() {   //资源列表
     var rdetail:String? = null  //详情
     var upid :String? = null    //上传者编号
     var rc:String? = null       //所属社区编号
+    var rfilename:String? = null //文件名称
 }

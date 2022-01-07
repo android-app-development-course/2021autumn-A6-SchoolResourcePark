@@ -46,7 +46,7 @@ class CommunityDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_details)
         supportActionBar?.hide()
-        titleText.setText("社区名称")
+        titleText.setText("社区详情")
 
         tabQuestion.bringToFront()
         tabResource.bringToFront()

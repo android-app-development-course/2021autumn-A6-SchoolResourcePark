@@ -29,6 +29,7 @@ import kotlinx.android.synthetic.main.activity_my_info.*
 import kotlinx.android.synthetic.main.activity_password_change.*
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.title.*
+import kotlinx.android.synthetic.main.title.view.*
 import java.io.File
 
 class myInfo : AppCompatActivity() {
@@ -43,6 +44,14 @@ class myInfo : AppCompatActivity() {
         titleText.setText("我的信息")
         uid=intent.getStringExtra("uid").toString()  //获取当前用户id
         showInfo(uid)
+
+        titleBack.setOnClickListener{
+            val intent=Intent(this,PersonalCenter::class.java)
+            intent.putExtra("uid",uid)
+            startActivity(intent)
+            finish()
+        }
+
         //点击进入修改密码界面
         bt_changepw1.setOnClickListener{
             val intent = Intent(this, passwordChange::class.java)
